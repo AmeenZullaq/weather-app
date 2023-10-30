@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Styles {
-  static const textStyle = TextStyle(
+  static const textStyle14 = TextStyle(
     color: Colors.white,
   );
 

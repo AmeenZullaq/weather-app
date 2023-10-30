@@ -24,7 +24,7 @@ class TodayWeather extends StatelessWidget {
               padding: EdgeInsets.only(
                 left: 70,
                 top: 70,
-                bottom: 20,
+                bottom: 15,
               ),
               child: Opacity(
                 opacity: 0.8,

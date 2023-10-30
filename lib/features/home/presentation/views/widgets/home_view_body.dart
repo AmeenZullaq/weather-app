@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home_app_bar.dart';
 import 'today_weatjer.dart';
+import 'weather_info.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -12,10 +13,11 @@ class HomeViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           HomeAppBar(),
-          SizedBox(
-            height: 20,
-          ),
+          SizedBox(height: 20),
           TodayWeather(),
+          SizedBox(height: 30),
+          WeatherInfo(),
+          SizedBox(height: 20),
         ],
       ),
     );

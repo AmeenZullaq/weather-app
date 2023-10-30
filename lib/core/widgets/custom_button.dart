@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:waether_app/core/utilis/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.icon});
@@ -11,7 +12,7 @@ class CustomButton extends StatelessWidget {
         height: 40,
         width: 40,
         decoration: BoxDecoration(
-          color: const Color(0xFF331C71),
+          color: AppColors.containerColor,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Icon(

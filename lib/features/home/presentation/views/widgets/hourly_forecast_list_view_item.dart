@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:waether_app/core/utilis/styles.dart';
 import '../../../../../core/utilis/app_colors.dart';
 import '../../../../../core/utilis/assets.dart';
 
@@ -8,22 +9,23 @@ class HourlyForecastListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       decoration: BoxDecoration(
         color: AppColors.containerColor,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(24),
       ),
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             '10 AM',
+            style: Styles.textStyle17,
           ),
           SizedBox(
             height: 8,
           ),
           Image(
-            height: 30,
+            height: 35,
             image: AssetImage(
               AssetsData.testImage,
             ),
@@ -33,6 +35,7 @@ class HourlyForecastListViewItem extends StatelessWidget {
           ),
           Text(
             '23°',
+            style: Styles.textStyle16,
           ),
         ],
       ),

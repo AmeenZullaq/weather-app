@@ -23,9 +23,15 @@ class WeatherInfoItem extends StatelessWidget {
             image,
           ),
         ),
+        const SizedBox(
+          height: 5,
+        ),
         Text(
           text1,
           style: Styles.textStyle17,
+        ),
+        const SizedBox(
+          height: 5,
         ),
         Text(
           text2,

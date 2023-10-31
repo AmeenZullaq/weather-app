@@ -11,6 +11,11 @@ class TodayWeather extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
+          'Damascus',
+          style: Styles.textStyle30,
+        ),
+        SizedBox(height: 10),
+        Text(
           'Mostly Sunny',
           style: Styles.textStyle14,
         ),

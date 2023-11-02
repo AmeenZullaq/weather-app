@@ -11,7 +11,7 @@ class HourlyForecastListViewItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       decoration: BoxDecoration(
-        color: AppColors.containerColor,
+        color: AppColors.darkColor,
         borderRadius: BorderRadius.circular(24),
       ),
       child: const Column(

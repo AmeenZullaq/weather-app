@@ -3,7 +3,7 @@ import 'custom_text_field.dart';
 import 'hourly_forecast_list_view.dart';
 import 'text_row.dart';
 import 'today_weather.dart';
-import 'weather_info.dart';
+import 'weather_more_info.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -20,9 +20,9 @@ class HomeViewBody extends StatelessWidget {
               child: CustomTextField(),
             ),
             SizedBox(height: 20),
-            TodayWeather(),
+            TodayWeather(), 
             SizedBox(height: 30),
-            WeatherInfo(),
+            WeatherMoreInfo(), 
             TextRow(),
             Padding(
               padding: EdgeInsets.only(left: 20),

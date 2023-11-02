@@ -17,7 +17,6 @@ class TodayWeather extends StatelessWidget {
         SizedBox(height: 10),
         Text(
           'Mostly Sunny',
-          style: Styles.textStyle14,
         ),
         Stack(
           children: [
@@ -45,7 +44,6 @@ class TodayWeather extends StatelessWidget {
         ),
         Text(
           'Saturday 10 february | 10 AM',
-          style: Styles.textStyle14,
         ),
       ],
     );

@@ -9,10 +9,10 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height: 40,
-        width: 40,
+        height: 20,
+        width: 20,
         decoration: BoxDecoration(
-          color: AppColors.containerColor,
+          color: AppColors.darkColor,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Icon(

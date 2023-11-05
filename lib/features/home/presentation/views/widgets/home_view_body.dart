@@ -20,9 +20,9 @@ class HomeViewBody extends StatelessWidget {
               child: CustomTextField(),
             ),
             SizedBox(height: 20),
-            TodayWeather(), 
+            TodayWeather(),
             SizedBox(height: 30),
-            WeatherMoreInfo(), 
+            WeatherMoreInfo(),
             TextRow(),
             Padding(
               padding: EdgeInsets.only(left: 20),

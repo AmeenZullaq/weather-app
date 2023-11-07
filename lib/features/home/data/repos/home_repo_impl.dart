@@ -17,10 +17,11 @@ class HomeRepoImpl implements HomeRepo {
   }) async {
     try {
       var data = await apiService.get(
-        endPoint: 'current.json?key=$apiKey&q=$cityName',
+        endPoint:
+            'https://api.weatherapi.com/v1/forecast.json?key=$apiKey&q=$cityName&days=0',
       );
-      WeatherModel currentWeaher = WeatherModel.fromJson(data);
-      return right(currentWeaher);
+      WeatherModel weatherModel = WeatherModel.fromJson(data);
+      return right(weatherModel);
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
@@ -32,8 +33,4 @@ class HomeRepoImpl implements HomeRepo {
     }
   }
 
-  // @override
-  // Future<Either<Failure, List<ForecastWeatherModel>>> fetchForecastWeather({required String cityName}) {
-
-  // }
 }

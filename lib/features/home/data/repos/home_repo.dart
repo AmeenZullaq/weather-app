@@ -7,8 +7,4 @@ abstract class HomeRepo {
   Future<Either<Failure, WeatherModel>> fetchCurrentWeather({
     required String cityName,
   });
-
-  // Future<Either<Failure, List<ForecastWeatherModel>>> fetchForecastWeather({
-  //   required String cityName,
-  // });
 }

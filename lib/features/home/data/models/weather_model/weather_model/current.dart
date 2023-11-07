@@ -6,7 +6,7 @@ class Current extends Equatable {
   final int? lastUpdatedEpoch;
   final String? lastUpdated;
   final int? tempC;
-  final double? tempF;
+  final int? tempF;
   final int? isDay;
   final Condition? condition;
   final double? windMph;
@@ -19,7 +19,7 @@ class Current extends Equatable {
   final int? precipIn;
   final int? humidity;
   final int? cloud;
-  final int? feelslikeC;
+  final double? feelslikeC;
   final double? feelslikeF;
   final int? visKm;
   final int? visMiles;
@@ -57,7 +57,7 @@ class Current extends Equatable {
         lastUpdatedEpoch: json['last_updated_epoch'] as int?,
         lastUpdated: json['last_updated'] as String?,
         tempC: json['temp_c'] as int?,
-        tempF: (json['temp_f'] as num?)?.toDouble(),
+        tempF: json['temp_f'] as int?,
         isDay: json['is_day'] as int?,
         condition: json['condition'] == null
             ? null
@@ -72,7 +72,7 @@ class Current extends Equatable {
         precipIn: json['precip_in'] as int?,
         humidity: json['humidity'] as int?,
         cloud: json['cloud'] as int?,
-        feelslikeC: json['feelslike_c'] as int?,
+        feelslikeC: (json['feelslike_c'] as num?)?.toDouble(),
         feelslikeF: (json['feelslike_f'] as num?)?.toDouble(),
         visKm: json['vis_km'] as int?,
         visMiles: json['vis_miles'] as int?,

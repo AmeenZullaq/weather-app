@@ -23,7 +23,7 @@ class ServerFailure extends Failure {
           dioException.response!.statusCode!,
           dioException.response!.data,
         );
-        
+
       default:
         return ServerFailure('Unknown error');
     }

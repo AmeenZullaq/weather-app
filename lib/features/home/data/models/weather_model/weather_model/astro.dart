@@ -6,9 +6,9 @@ class Astro extends Equatable {
   final String? moonrise;
   final String? moonset;
   final String? moonPhase;
-  final int? moonIllumination;
-  final int? isMoonUp;
-  final int? isSunUp;
+  final num? moonIllumination;
+  final num? isMoonUp;
+  final num? isSunUp;
 
   const Astro({
     this.sunrise,
@@ -27,9 +27,9 @@ class Astro extends Equatable {
         moonrise: json['moonrise'] as String?,
         moonset: json['moonset'] as String?,
         moonPhase: json['moon_phase'] as String?,
-        moonIllumination: json['moon_illumination'] as int?,
-        isMoonUp: json['is_moon_up'] as int?,
-        isSunUp: json['is_sun_up'] as int?,
+        moonIllumination: json['moon_illumination'] as num?,
+        isMoonUp: json['is_moon_up'] as num?,
+        isSunUp: json['is_sun_up'] as num?,
       );
 
   Map<String, dynamic> toJson() => {

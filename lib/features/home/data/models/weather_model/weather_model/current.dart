@@ -5,25 +5,25 @@ import 'condition.dart';
 class Current extends Equatable {
   final int? lastUpdatedEpoch;
   final String? lastUpdated;
-  final int? tempC;
-  final int? tempF;
+  final double? tempC;
+  final double? tempF;
   final int? isDay;
   final Condition? condition;
   final double? windMph;
   final double? windKph;
   final int? windDegree;
   final String? windDir;
-  final int? pressureMb;
+  final double? pressureMb;
   final double? pressureIn;
-  final int? precipMm;
-  final int? precipIn;
+  final double? precipMm;
+  final double? precipIn;
   final int? humidity;
   final int? cloud;
   final double? feelslikeC;
   final double? feelslikeF;
-  final int? visKm;
-  final int? visMiles;
-  final int? uv;
+  final double? visKm;
+  final double? visMiles;
+  final double? uv;
   final double? gustMph;
   final double? gustKph;
 
@@ -56,8 +56,8 @@ class Current extends Equatable {
   factory Current.fromJson(Map<String, dynamic> json) => Current(
         lastUpdatedEpoch: json['last_updated_epoch'] as int?,
         lastUpdated: json['last_updated'] as String?,
-        tempC: json['temp_c'] as int?,
-        tempF: json['temp_f'] as int?,
+        tempC: json['temp_c'] as double?,
+        tempF: json['temp_f'] as double?,
         isDay: json['is_day'] as int?,
         condition: json['condition'] == null
             ? null
@@ -66,17 +66,17 @@ class Current extends Equatable {
         windKph: (json['wind_kph'] as num?)?.toDouble(),
         windDegree: json['wind_degree'] as int?,
         windDir: json['wind_dir'] as String?,
-        pressureMb: json['pressure_mb'] as int?,
+        pressureMb: json['pressure_mb'] as double?,
         pressureIn: (json['pressure_in'] as num?)?.toDouble(),
-        precipMm: json['precip_mm'] as int?,
-        precipIn: json['precip_in'] as int?,
+        precipMm: json['precip_mm'] as double?,
+        precipIn: json['precip_in'] as double?,
         humidity: json['humidity'] as int?,
         cloud: json['cloud'] as int?,
         feelslikeC: (json['feelslike_c'] as num?)?.toDouble(),
         feelslikeF: (json['feelslike_f'] as num?)?.toDouble(),
-        visKm: json['vis_km'] as int?,
-        visMiles: json['vis_miles'] as int?,
-        uv: json['uv'] as int?,
+        visKm: json['vis_km'] as double?,
+        visMiles: json['vis_miles'] as double?,
+        uv: json['uv'] as double?,
         gustMph: (json['gust_mph'] as num?)?.toDouble(),
         gustKph: (json['gust_kph'] as num?)?.toDouble(),
       );

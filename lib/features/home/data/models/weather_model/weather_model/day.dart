@@ -3,26 +3,26 @@ import 'package:equatable/equatable.dart';
 import 'condition.dart';
 
 class Day extends Equatable {
-  final double? maxtempC;
-  final double? maxtempF;
-  final double? mintempC;
-  final double? mintempF;
-  final double? avgtempC;
-  final double? avgtempF;
-  final double? maxwindMph;
-  final double? maxwindKph;
-  final int? totalprecipMm;
-  final int? totalprecipIn;
-  final int? totalsnowCm;
-  final int? avgvisKm;
-  final int? avgvisMiles;
-  final int? avghumidity;
-  final int? dailyWillItRain;
-  final int? dailyChanceOfRain;
-  final int? dailyWillItSnow;
-  final int? dailyChanceOfSnow;
+  final num? maxtempC;
+  final num? maxtempF;
+  final num? mintempC;
+  final num? mintempF;
+  final num? avgtempC;
+  final num? avgtempF;
+  final num? maxwindMph;
+  final num? maxwindKph;
+  final num? totalprecipMm;
+  final num? totalprecipIn;
+  final num? totalsnowCm;
+  final num? avgvisKm;
+  final num? avgvisMiles;
+  final num? avghumidity;
+  final num? dailyWillItRain;
+  final num? dailyChanceOfRain;
+  final num? dailyWillItSnow;
+  final num? dailyChanceOfSnow;
   final Condition? condition;
-  final int? uv;
+  final num? uv;
 
   const Day({
     this.maxtempC,
@@ -48,28 +48,28 @@ class Day extends Equatable {
   });
 
   factory Day.fromJson(Map<String, dynamic> json) => Day(
-        maxtempC: (json['maxtemp_c'] as num?)?.toDouble(),
-        maxtempF: (json['maxtemp_f'] as num?)?.toDouble(),
-        mintempC: (json['mintemp_c'] as num?)?.toDouble(),
-        mintempF: (json['mintemp_f'] as num?)?.toDouble(),
-        avgtempC: (json['avgtemp_c'] as num?)?.toDouble(),
-        avgtempF: (json['avgtemp_f'] as num?)?.toDouble(),
-        maxwindMph: (json['maxwind_mph'] as num?)?.toDouble(),
-        maxwindKph: (json['maxwind_kph'] as num?)?.toDouble(),
-        totalprecipMm: json['totalprecip_mm'] as int?,
-        totalprecipIn: json['totalprecip_in'] as int?,
-        totalsnowCm: json['totalsnow_cm'] as int?,
-        avgvisKm: json['avgvis_km'] as int?,
-        avgvisMiles: json['avgvis_miles'] as int?,
-        avghumidity: json['avghumidity'] as int?,
-        dailyWillItRain: json['daily_will_it_rain'] as int?,
-        dailyChanceOfRain: json['daily_chance_of_rain'] as int?,
-        dailyWillItSnow: json['daily_will_it_snow'] as int?,
-        dailyChanceOfSnow: json['daily_chance_of_snow'] as int?,
+        maxtempC: json['maxtemp_c'] as num?,
+        maxtempF: json['maxtemp_f'] as num?,
+        mintempC: json['mintemp_c'] as num?,
+        mintempF: json['mintemp_f'] as num?,
+        avgtempC: json['avgtemp_c'] as num?,
+        avgtempF: json['avgtemp_f'] as num?,
+        maxwindMph: json['maxwind_mph'] as num?,
+        maxwindKph: json['maxwind_kph'] as num?,
+        totalprecipMm: json['totalprecip_mm'] as num?,
+        totalprecipIn: json['totalprecip_in'] as num?,
+        totalsnowCm: json['totalsnow_cm'] as num?,
+        avgvisKm: json['avgvis_km'] as num?,
+        avgvisMiles: json['avgvis_miles'] as num?,
+        avghumidity: json['avghumidity'] as num?,
+        dailyWillItRain: json['daily_will_it_rain'] as num?,
+        dailyChanceOfRain: json['daily_chance_of_rain'] as num?,
+        dailyWillItSnow: json['daily_will_it_snow'] as num?,
+        dailyChanceOfSnow: json['daily_chance_of_snow'] as num?,
         condition: json['condition'] == null
             ? null
             : Condition.fromJson(json['condition'] as Map<String, dynamic>),
-        uv: json['uv'] as int?,
+        uv: json['uv'] as num?,
       );
 
   Map<String, dynamic> toJson() => {

@@ -8,7 +8,7 @@ import '../../../../../core/utilis/assets.dart';
 import 'weather_info_item.dart';
 
 class RowWeatherInfo extends StatelessWidget {
-  const RowWeatherInfo({super.key});
+  const RowWeatherInfo({super.key}); 
 
   @override
   Widget build(BuildContext context) {

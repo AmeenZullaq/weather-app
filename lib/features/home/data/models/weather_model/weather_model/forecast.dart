@@ -6,7 +6,7 @@ class Forecast extends Equatable {
   final List<Forecastday>? forecastday;
 
   const Forecast({this.forecastday});
-
+  
   factory Forecast.fromJson(Map<String, dynamic> json) => Forecast(
         forecastday: (json['forecastday'] as List<dynamic>?)
             ?.map((e) => Forecastday.fromJson(e as Map<String, dynamic>))

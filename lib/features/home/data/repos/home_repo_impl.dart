@@ -16,9 +16,8 @@ class HomeRepoImpl implements HomeRepo {
     required String cityName,
   }) async {
     try {
-      var data = await apiService.get(
-        endPoint:
-            'https://api.weatherapi.com/v1/forecast.json?key=$apiKey&q=$cityName&days=0',
+      Map<String, dynamic> data = await apiService.get(
+        endPoint: 'forecast.json?key=$apiKey&q=$cityName&days=0',
       );
       WeatherModel weatherModel = WeatherModel.fromJson(data);
       return right(weatherModel);
@@ -32,5 +31,4 @@ class HomeRepoImpl implements HomeRepo {
       }
     }
   }
-
 }

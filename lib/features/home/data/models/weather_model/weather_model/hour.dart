@@ -3,39 +3,39 @@ import 'package:equatable/equatable.dart';
 import 'condition.dart';
 
 class Hour extends Equatable {
-  final int? timeEpoch;
+  final num? timeEpoch;
   final String? time;
-  final double? tempC;
-  final double? tempF;
-  final int? isDay;
+  final num? tempC;
+  final num? tempF;
+  final num? isDay;
   final Condition? condition;
-  final double? windMph;
-  final double? windKph;
-  final int? windDegree;
+  final num? windMph;
+  final num? windKph;
+  final num? windDegree;
   final String? windDir;
-  final int? pressureMb;
-  final double? pressureIn;
-  final int? precipMm;
-  final int? precipIn;
-  final int? humidity;
-  final int? cloud;
-  final double? feelslikeC;
-  final double? feelslikeF;
-  final double? windchillC;
-  final double? windchillF;
-  final double? heatindexC;
-  final double? heatindexF;
-  final double? dewpointC;
-  final double? dewpointF;
-  final int? willItRain;
-  final int? chanceOfRain;
-  final int? willItSnow;
-  final int? chanceOfSnow;
-  final int? visKm;
-  final int? visMiles;
-  final double? gustMph;
-  final double? gustKph;
-  final int? uv;
+  final num? pressureMb;
+  final num? pressureIn;
+  final num? precipMm;
+  final num? precipIn;
+  final num? humidity;
+  final num? cloud;
+  final num? feelslikeC;
+  final num? feelslikeF;
+  final num? windchillC;
+  final num? windchillF;
+  final num? heatindexC;
+  final num? heatindexF;
+  final num? dewpointC;
+  final num? dewpointF;
+  final num? willItRain;
+  final num? chanceOfRain;
+  final num? willItSnow;
+  final num? chanceOfSnow;
+  final num? visKm;
+  final num? visMiles;
+  final num? gustMph;
+  final num? gustKph;
+  final num? uv;
 
   const Hour({
     this.timeEpoch,
@@ -74,41 +74,41 @@ class Hour extends Equatable {
   });
 
   factory Hour.fromJson(Map<String, dynamic> json) => Hour(
-        timeEpoch: json['time_epoch'] as int?,
+        timeEpoch: json['time_epoch'] as num?,
         time: json['time'] as String?,
-        tempC: (json['temp_c'] as num?)?.toDouble(),
-        tempF: (json['temp_f'] as num?)?.toDouble(),
-        isDay: json['is_day'] as int?,
+        tempC: json['temp_c'] as num?,
+        tempF: json['temp_f'] as num?,
+        isDay: json['is_day'] as num?,
         condition: json['condition'] == null
             ? null
             : Condition.fromJson(json['condition'] as Map<String, dynamic>),
-        windMph: (json['wind_mph'] as num?)?.toDouble(),
-        windKph: (json['wind_kph'] as num?)?.toDouble(),
-        windDegree: json['wind_degree'] as int?,
+        windMph: json['wind_mph'] as num?,
+        windKph: json['wind_kph'] as num?,
+        windDegree: json['wind_degree'] as num?,
         windDir: json['wind_dir'] as String?,
-        pressureMb: json['pressure_mb'] as int?,
-        pressureIn: (json['pressure_in'] as num?)?.toDouble(),
-        precipMm: json['precip_mm'] as int?,
-        precipIn: json['precip_in'] as int?,
-        humidity: json['humidity'] as int?,
-        cloud: json['cloud'] as int?,
-        feelslikeC: (json['feelslike_c'] as num?)?.toDouble(),
-        feelslikeF: (json['feelslike_f'] as num?)?.toDouble(),
-        windchillC: (json['windchill_c'] as num?)?.toDouble(),
-        windchillF: (json['windchill_f'] as num?)?.toDouble(),
-        heatindexC: (json['heatindex_c'] as num?)?.toDouble(),
-        heatindexF: (json['heatindex_f'] as num?)?.toDouble(),
-        dewpointC: (json['dewpoint_c'] as num?)?.toDouble(),
-        dewpointF: (json['dewpoint_f'] as num?)?.toDouble(),
-        willItRain: json['will_it_rain'] as int?,
-        chanceOfRain: json['chance_of_rain'] as int?,
-        willItSnow: json['will_it_snow'] as int?,
-        chanceOfSnow: json['chance_of_snow'] as int?,
-        visKm: json['vis_km'] as int?,
-        visMiles: json['vis_miles'] as int?,
+        pressureMb: json['pressure_mb'] as num?,
+        pressureIn: json['pressure_in'] as num?,
+        precipMm: json['precip_mm'] as num?,
+        precipIn: json['precip_in'] as num?,
+        humidity: json['humidity'] as num?,
+        cloud: json['cloud'] as num?,
+        feelslikeC: json['feelslike_c'] as num?,
+        feelslikeF: json['feelslike_f'] as num?,
+        windchillC: json['windchill_c'] as num?,
+        windchillF: json['windchill_f'] as num?,
+        heatindexC: json['heatindex_c'] as num?,
+        heatindexF: json['heatindex_f'] as num?,
+        dewpointC: json['dewpoint_c'] as num?,
+        dewpointF: json['dewpoint_f'] as num?,
+        willItRain: json['will_it_rain'] as num?,
+        chanceOfRain: json['chance_of_rain'] as num?,
+        willItSnow: json['will_it_snow'] as num?,
+        chanceOfSnow: json['chance_of_snow'] as num?,
+        visKm: json['vis_km'] as num?,
+        visMiles: json['vis_miles'] as num?,
         gustMph: (json['gust_mph'] as num?)?.toDouble(),
         gustKph: (json['gust_kph'] as num?)?.toDouble(),
-        uv: json['uv'] as int?,
+        uv: json['uv'] as num?,
       );
 
   Map<String, dynamic> toJson() => {

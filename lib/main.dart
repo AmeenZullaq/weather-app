@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:waether_app/core/utilis/app_router.dart';
+import 'package:waether_app/core/utilis/service_locator.dart';
 
 void main() {
+  setup();
   runApp(const MyApp());
 }
 

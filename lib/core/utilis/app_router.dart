@@ -16,7 +16,7 @@ class AppRouter {
           return BlocProvider(
             create: (context) => CurrentWeatherCubit(
               getIt.get<HomeRepoImpl>(),
-            )..fetchCurrentWeather(cityName: 'damascus'),
+            )..fetchCurrentWeather(cityName: 'london'),
             child: const HomeView(),
           );
         },

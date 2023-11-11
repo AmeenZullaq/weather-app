@@ -43,7 +43,7 @@ class HourlyForecastListViewItem extends StatelessWidget {
             height: 8,
           ),
           Text(
-            '${hourWeather.tempC}°',
+            '${hourWeather.tempC.floor()}°',
             style: Styles.textStyle16,
           ),
         ],

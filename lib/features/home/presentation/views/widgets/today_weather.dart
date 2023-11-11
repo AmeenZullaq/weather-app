@@ -5,16 +5,16 @@ import 'package:waether_app/core/widgets/custom_loading_indecator.dart';
 import 'package:waether_app/features/home/data/models/weather_model/weather_model/weather_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../../../../core/utilis/styles.dart';
-import '../../manager/current_weather_cubit/current_weather_cubit.dart';
+import '../../manager/current_weather_cubit/weather_cubit.dart';
 
 class TodayWeather extends StatelessWidget {
   const TodayWeather({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CurrentWeatherCubit, CurrentWeatherState>(
+    return BlocBuilder<WeatherCubit, WeatherState>(
       builder: (context, state) {
-        if (state is CurrentWeatherSuccess) {
+        if (state is WeatherSuccess) {
           WeatherModel weatherModel = state.weatherModel;
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,7 +64,7 @@ class TodayWeather extends StatelessWidget {
               ),
             ],
           );
-        } else if (state is CurrentWeatherFailure) {
+        } else if (state is WeatherFailure) {
           return CustomErrorWidget(
             errMessage: state.errMessage,
           );

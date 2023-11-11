@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waether_app/core/widgets/custom_error_widget.dart';
 import 'package:waether_app/core/widgets/custom_loading_indecator.dart';
 import 'package:waether_app/features/home/data/models/weather_model/weather_model/weather_model.dart';
-import 'package:waether_app/features/home/presentation/manager/current_weather_cubit/current_weather_cubit.dart';
+import 'package:waether_app/features/home/presentation/manager/current_weather_cubit/weather_cubit.dart';
 import '../../../../../core/utilis/assets.dart';
 import 'weather_info_item.dart';
 
@@ -12,9 +12,9 @@ class RowWeatherInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CurrentWeatherCubit, CurrentWeatherState>(
+    return BlocBuilder<WeatherCubit, WeatherState>(
       builder: (context, state) {
-        if (state is CurrentWeatherSuccess) {
+        if (state is WeatherSuccess) {
           WeatherModel weatherModel = state.weatherModel;
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -36,7 +36,7 @@ class RowWeatherInfo extends StatelessWidget {
               ),
             ],
           );
-        } else if (state is CurrentWeatherFailure) {
+        } else if (state is WeatherFailure) {
           return CustomErrorWidget(
             errMessage: state.errMessage,
           );

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:waether_app/features/home/presentation/views/widgets/tomorrow_weather.dart';
 import 'forecast_list_view.dart';
+import 'tomorrow_weather.dart';
 
 class ForecastViewBody extends StatelessWidget {
   const ForecastViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(20),
         child: Column(

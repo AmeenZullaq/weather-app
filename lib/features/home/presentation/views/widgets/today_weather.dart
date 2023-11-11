@@ -20,37 +20,47 @@ class TodayWeather extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                weatherModel.location!.name!,
+                weatherModel.location.name,
                 style: Styles.textStyle30,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(
+                height: 10,
+              ),
               Text(
-                weatherModel.current!.condition!.text!,
+                weatherModel.current.condition.text,
+                style: Styles.textStyle18,
               ),
               Stack(
                 children: [
-                  Text(
-                    '${weatherModel.current!.tempC}',
-                    style: Styles.textStyle150,
+                  Center(
+                    child: Text(
+                      '${weatherModel.current.tempC}°',
+                      style: Styles.textStyle150,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                      left: 70,
-                      top: 70,
-                      bottom: 15,
+                      top: 65,
+                      right: 65,
                     ),
-                    child: Opacity(
-                      opacity: 0.8,
-                      child: CachedNetworkImage(
-                        height: 130,
-                        imageUrl: weatherModel.current!.condition!.icon!,
+                    child: Align(
+                      alignment: Alignment.bottomRight,
+                      child: Opacity(
+                        opacity: 0.8,
+                        child: CachedNetworkImage(
+                          height: 150,
+                          fit: BoxFit.fill,
+                          imageUrl:
+                              'https:${weatherModel.current.condition.icon}',
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
               Text(
-                weatherModel.location!.localtime!,
+                weatherModel.location.localtime,
+                style: Styles.textStyle18,
               ),
             ],
           );

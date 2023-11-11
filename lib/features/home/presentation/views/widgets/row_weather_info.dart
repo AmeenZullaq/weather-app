@@ -8,7 +8,7 @@ import '../../../../../core/utilis/assets.dart';
 import 'weather_info_item.dart';
 
 class RowWeatherInfo extends StatelessWidget {
-  const RowWeatherInfo({super.key}); 
+  const RowWeatherInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +21,18 @@ class RowWeatherInfo extends StatelessWidget {
             children: [
               WeatherInfoItem(
                 image: AssetsData.umbrella,
-                text1: '${weatherModel.current!.precipMm}',
+                text1: '${weatherModel.current.precipMm}',
                 text2: 'Precipitation',
               ),
               WeatherInfoItem(
                 image: AssetsData.humidity,
-                text1: '${weatherModel.current!.humidity}',
+                text1: '${weatherModel.current.humidity}',
                 text2: 'Humidity',
               ),
               WeatherInfoItem(
                 image: AssetsData.windSpeed,
-                text1: '9km/h',
-                text2: '${weatherModel.current!.windKph}',
+                text1: '${weatherModel.current.windKph}',
+                text2: 'Wind Speed',
               ),
             ],
           );

@@ -4,11 +4,11 @@ import 'condition.dart';
 
 class Hour extends Equatable {
   final num? timeEpoch;
-  final String? time;
-  final num? tempC;
+  final String time;
+  final num tempC;
   final num? tempF;
   final num? isDay;
-  final Condition? condition;
+  final Condition condition;
   final num? windMph;
   final num? windKph;
   final num? windDegree;
@@ -39,11 +39,11 @@ class Hour extends Equatable {
 
   const Hour({
     this.timeEpoch,
-    this.time,
-    this.tempC,
+    required this.time,
+    required this.tempC,
     this.tempF,
     this.isDay,
-    this.condition,
+    required this.condition,
     this.windMph,
     this.windKph,
     this.windDegree,
@@ -75,13 +75,12 @@ class Hour extends Equatable {
 
   factory Hour.fromJson(Map<String, dynamic> json) => Hour(
         timeEpoch: json['time_epoch'] as num?,
-        time: json['time'] as String?,
-        tempC: json['temp_c'] as num?,
+        time: json['time'] as String,
+        tempC: json['temp_c'] as num,
         tempF: json['temp_f'] as num?,
         isDay: json['is_day'] as num?,
-        condition: json['condition'] == null
-            ? null
-            : Condition.fromJson(json['condition'] as Map<String, dynamic>),
+        condition:
+            Condition.fromJson(json['condition'] as Map<String, dynamic>),
         windMph: json['wind_mph'] as num?,
         windKph: json['wind_kph'] as num?,
         windDegree: json['wind_degree'] as num?,
@@ -117,7 +116,7 @@ class Hour extends Equatable {
         'temp_c': tempC,
         'temp_f': tempF,
         'is_day': isDay,
-        'condition': condition?.toJson(),
+        'condition': condition.toJson(),
         'wind_mph': windMph,
         'wind_kph': windKph,
         'wind_degree': windDegree,

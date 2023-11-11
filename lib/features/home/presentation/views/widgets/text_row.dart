@@ -13,9 +13,9 @@ class TextRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
+          Text(
             'Today',
-            style: Styles.textStyle17,
+            style: Styles.textStyle17.copyWith(color: Colors.yellow),
           ),
           GestureDetector(
             onTap: () {

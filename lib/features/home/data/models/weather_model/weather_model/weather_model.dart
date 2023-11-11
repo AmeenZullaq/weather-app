@@ -5,28 +5,23 @@ import 'forecast.dart';
 import 'location.dart';
 
 class WeatherModel extends Equatable {
-  final Location? location;
-  final Current? current;
-  final Forecast? forecast;
+  final Location location;
+  final Current current;
+  final Forecast forecast;
 
-  const WeatherModel({this.location, this.current, this.forecast});
+  const WeatherModel(
+      {required this.location, required this.current, required this.forecast});
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) => WeatherModel(
-        location: json['location'] == null
-            ? null
-            : Location.fromJson(json['location'] as Map<String, dynamic>),
-        current: json['current'] == null
-            ? null
-            : Current.fromJson(json['current'] as Map<String, dynamic>),
-        forecast: json['forecast'] == null
-            ? null
-            : Forecast.fromJson(json['forecast'] as Map<String, dynamic>),
+        location: Location.fromJson(json['location'] as Map<String, dynamic>),
+        current: Current.fromJson(json['current'] as Map<String, dynamic>),
+        forecast: Forecast.fromJson(json['forecast'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {
-        'location': location?.toJson(),
-        'current': current?.toJson(),
-        'forecast': forecast?.toJson(),
+        'location': location.toJson(),
+        'current': current.toJson(),
+        'forecast': forecast.toJson(),
       };
 
   @override

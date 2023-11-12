@@ -11,12 +11,10 @@ class WeatherCubit extends Cubit<WeatherState> {
 
   Future fetchCurrentWeather({
     required String cityName,
-    required int daysNumber,
   }) async {
     emit(WeatherLoading());
     var result = await homeRepo.fetchCurrentWeather(
       cityName: cityName,
-      daysNumber: daysNumber,
     );
     result.fold(
       (left) {

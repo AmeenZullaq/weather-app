@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'custom_text_field.dart';
 import 'hourly_forecast_list_view.dart';
 import 'text_row.dart';
 import 'today_weather.dart';
@@ -15,10 +14,10 @@ class HomeViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: CustomTextField(),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 20),
+            //   child: CustomTextField(),
+            // ),
             SizedBox(
               height: 20,
             ),

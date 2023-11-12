@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:waether_app/core/utilis/app_router.dart';
 import 'package:waether_app/features/home/presentation/manager/current_weather_cubit/weather_cubit.dart';
 import '../../../../../core/utilis/app_colors.dart';
 import '../../../../../core/utilis/functions/out_line_input_border.dart';
@@ -24,17 +26,23 @@ class _CustomTextFieldState extends State<CustomTextField> {
           cityName = newValue!;
         },
         validator: (value) {
-          if (value != null) {
-            if (value.isEmpty) {
-              return 'field is required';
-            }
+          if (value == null || value.isEmpty || value.length == 4) {
+            return 'field is required';
           }
           return null;
         },
         cursorColor: Colors.white,
         decoration: InputDecoration(
-          fillColor: AppColors.darkColor,
+          fillColor: AppColors.lightColor,
           filled: true,
+          hintText: 'Search a City',
+          hintStyle: const TextStyle(
+            color: Colors.white,
+          ),
+          enabledBorder: outLineInputBorder(),
+          focusedBorder: outLineInputBorder(),
+          errorBorder: outLineInputBorder(),
+          focusedErrorBorder: outLineInputBorder(),
           suffixIcon: IconButton(
             icon: const Icon(
               Icons.search,
@@ -43,17 +51,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-                BlocProvider.of<WeatherCubit>(context)
-                    .fetchCurrentWeather(
+                BlocProvider.of<WeatherCubit>(context).fetchCurrentWeather(
                   cityName: cityName,
-                  daysNumber: 0,
                 );
+                GoRouter.of(context).push(AppRouter.homeView);
               }
             },
           ),
-          hintText: 'Search a City',
-          enabledBorder: outLineInputBorder(),
-          focusedBorder: outLineInputBorder(),
         ),
       ),
     );

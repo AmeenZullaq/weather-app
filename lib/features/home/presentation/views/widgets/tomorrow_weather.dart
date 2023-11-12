@@ -53,7 +53,7 @@ class TomorrowWeather extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-        //  RowWeatherInfo(),
+          //  RowWeatherInfo(),
         ],
       ),
     );

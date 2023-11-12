@@ -5,6 +5,5 @@ import '../models/weather_model/weather_model/weather_model.dart';
 abstract class HomeRepo {
   Future<Either<Failure, WeatherModel>> fetchCurrentWeather({
     required String cityName,
-    required int daysNumber,
   });
 }

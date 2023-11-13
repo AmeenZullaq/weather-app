@@ -16,6 +16,7 @@ class ForecastListView extends StatelessWidget {
         if (state is WeatherSuccess) {
           WeatherModel weather = state.weatherModel;
           return ListView.separated(
+            physics: const BouncingScrollPhysics(),
             itemCount: weather.forecast.forecastday.length,
             separatorBuilder: (context, index) => const SizedBox(height: 20),
             itemBuilder: (context, index) {

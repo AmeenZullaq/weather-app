@@ -34,7 +34,7 @@ class Forecastday extends Equatable {
   Map<String, dynamic> toJson() => {
         'date': date,
         'date_epoch': dateEpoch,
-        'day': day?.toJson(),
+        'day': day.toJson(),
         'astro': astro?.toJson(),
         'hour': hour.map((e) => e.toJson()).toList(),
       };

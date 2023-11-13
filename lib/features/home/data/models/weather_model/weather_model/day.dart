@@ -90,7 +90,7 @@ class Day extends Equatable {
         'daily_chance_of_rain': dailyChanceOfRain,
         'daily_will_it_snow': dailyWillItSnow,
         'daily_chance_of_snow': dailyChanceOfSnow,
-        'condition': condition?.toJson(),
+        'condition': condition.toJson(),
         'uv': uv,
       };
 

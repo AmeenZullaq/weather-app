@@ -17,7 +17,7 @@ class HourlyForecastListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DateTime time = DateTime.parse(hourWeather.time);
-    int hour = time.hour;
+    String hour = time.hour.toStringAsFixed(2);
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       decoration: BoxDecoration(
@@ -36,15 +36,15 @@ class HourlyForecastListViewItem extends StatelessWidget {
           ),
           CachedNetworkImage(
             height: 50,
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
             imageUrl: 'https:${hourWeather.condition.icon}',
           ),
           const SizedBox(
-            height: 8,
+            height: 5,
           ),
           Text(
             '${hourWeather.tempC.floor()}°',
-            style: Styles.textStyle16,
+            style: Styles.textStyle18,
           ),
         ],
       ),

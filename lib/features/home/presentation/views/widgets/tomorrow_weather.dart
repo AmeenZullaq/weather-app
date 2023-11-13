@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:waether_app/features/home/presentation/views/widgets/row_weather_info.dart';
 import '../../../../../core/utilis/app_colors.dart';
 import '../../../../../core/utilis/assets.dart';
 import '../../../../../core/utilis/styles.dart';
@@ -35,9 +34,20 @@ class TomorrowWeather extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  Text(
-                    '19°',
-                    style: Styles.textStyle50,
+                  Stack(
+                    children: [
+                      Text(
+                        '19°',
+                        style: Styles.textStyle50,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 35, left: 60),
+                        child: Text(
+                          '/ 15°',
+                          style: Styles.textStyle30,
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 15,
@@ -53,7 +63,6 @@ class TomorrowWeather extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          //  RowWeatherInfo(),
         ],
       ),
     );

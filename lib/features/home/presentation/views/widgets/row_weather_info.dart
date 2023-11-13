@@ -1,49 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:waether_app/core/widgets/custom_error_widget.dart';
-import 'package:waether_app/core/widgets/custom_loading_indecator.dart';
 import 'package:waether_app/features/home/data/models/weather_model/weather_model/weather_model.dart';
-import 'package:waether_app/features/home/presentation/manager/current_weather_cubit/weather_cubit.dart';
 import '../../../../../core/utilis/assets.dart';
-import 'weather_info_item.dart';
+import 'row_weather_info_item.dart';
 
 class RowWeatherInfo extends StatelessWidget {
-  const RowWeatherInfo({super.key});
+  const RowWeatherInfo({super.key, required this.weather});
+  final WeatherModel weather;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<WeatherCubit, WeatherState>(
-      builder: (context, state) {
-        if (state is WeatherSuccess) {
-          WeatherModel weatherModel = state.weatherModel;
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              WeatherInfoItem(
-                image: AssetsData.umbrella,
-                text1: '${weatherModel.current.precipMm}',
-                text2: 'Precipitation',
-              ),
-              WeatherInfoItem(
-                image: AssetsData.humidity,
-                text1: '${weatherModel.current.humidity}',
-                text2: 'Humidity',
-              ),
-              WeatherInfoItem(
-                image: AssetsData.windSpeed,
-                text1: '${weatherModel.current.windKph}',
-                text2: 'Wind Speed',
-              ),
-            ],
-          );
-        } else if (state is WeatherFailure) {
-          return CustomErrorWidget(
-            errMessage: state.errMessage,
-          );
-        } else {
-          return const CustomLoadingIndecator();
-        }
-      },
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        RowWeatherInfoItem(
+          image: AssetsData.umbrella,
+          text1: '${weather.current.precipMm}',
+          text2: 'Precipitation',
+        ),
+        RowWeatherInfoItem(
+          image: AssetsData.humidity,
+          text1: '${weather.current.humidity}',
+          text2: 'Humidity',
+        ),
+        RowWeatherInfoItem(
+          image: AssetsData.windSpeed,
+          text1: '${weather.current.windKph}',
+          text2: 'Wind Speed',
+        ),
+      ],
     );
   }
 }

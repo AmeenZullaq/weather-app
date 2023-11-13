@@ -38,13 +38,13 @@ class TodayWeather extends StatelessWidget {
                       style: Styles.textStyle150,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 65,
-                      right: 65,
-                    ),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        top: 65,
+                        right: 65,
+                      ),
                       child: Opacity(
                         opacity: 0.8,
                         child: CachedNetworkImage(

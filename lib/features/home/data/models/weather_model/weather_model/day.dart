@@ -3,9 +3,9 @@ import 'package:equatable/equatable.dart';
 import 'condition.dart';
 
 class Day extends Equatable {
-  final num? maxtempC;
+  final num maxtempC;
   final num? maxtempF;
-  final num? mintempC;
+  final num mintempC;
   final num? mintempF;
   final num? avgtempC;
   final num? avgtempF;
@@ -21,13 +21,13 @@ class Day extends Equatable {
   final num? dailyChanceOfRain;
   final num? dailyWillItSnow;
   final num? dailyChanceOfSnow;
-  final Condition? condition;
+  final Condition condition;
   final num? uv;
 
   const Day({
-    this.maxtempC,
+    required this.maxtempC,
     this.maxtempF,
-    this.mintempC,
+    required this.mintempC,
     this.mintempF,
     this.avgtempC,
     this.avgtempF,
@@ -43,14 +43,14 @@ class Day extends Equatable {
     this.dailyChanceOfRain,
     this.dailyWillItSnow,
     this.dailyChanceOfSnow,
-    this.condition,
+    required this.condition,
     this.uv,
   });
 
   factory Day.fromJson(Map<String, dynamic> json) => Day(
-        maxtempC: json['maxtemp_c'] as num?,
+        maxtempC: json['maxtemp_c'] as num,
         maxtempF: json['maxtemp_f'] as num?,
-        mintempC: json['mintemp_c'] as num?,
+        mintempC: json['mintemp_c'] as num,
         mintempF: json['mintemp_f'] as num?,
         avgtempC: json['avgtemp_c'] as num?,
         avgtempF: json['avgtemp_f'] as num?,
@@ -66,9 +66,8 @@ class Day extends Equatable {
         dailyChanceOfRain: json['daily_chance_of_rain'] as num?,
         dailyWillItSnow: json['daily_will_it_snow'] as num?,
         dailyChanceOfSnow: json['daily_chance_of_snow'] as num?,
-        condition: json['condition'] == null
-            ? null
-            : Condition.fromJson(json['condition'] as Map<String, dynamic>),
+        condition:
+            Condition.fromJson(json['condition'] as Map<String, dynamic>),
         uv: json['uv'] as num?,
       );
 

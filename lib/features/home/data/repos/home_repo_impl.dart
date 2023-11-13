@@ -12,12 +12,13 @@ class HomeRepoImpl implements HomeRepo {
 
   HomeRepoImpl(this.apiService);
   @override
-  Future<Either<Failure, WeatherModel>> fetchCurrentWeather({
-    required String cityName, 
+  Future<Either<Failure, WeatherModel>> fetchWeatherInfo({
+    required String cityName,
+    required int daysNumber,
   }) async {
     try {
       Map<String, dynamic> data = await apiService.get(
-        endPoint: 'forecast.json?key=$apiKey&q=$cityName&days=0',
+        endPoint: 'forecast.json?key=$apiKey&q=$cityName&days=$daysNumber',
       );
       WeatherModel weatherModel = WeatherModel.fromJson(data);
       return right(weatherModel);

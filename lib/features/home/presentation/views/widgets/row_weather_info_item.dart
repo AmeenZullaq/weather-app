@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/utilis/styles.dart';
 
-class WeatherInfoItem extends StatelessWidget {
-  const WeatherInfoItem({
+class RowWeatherInfoItem extends StatelessWidget {
+  const RowWeatherInfoItem({
     super.key,
     required this.image,
     required this.text1,

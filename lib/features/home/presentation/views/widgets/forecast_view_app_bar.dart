@@ -18,7 +18,7 @@ class ForecastViewAppBar extends StatelessWidget {
           Icons.arrow_back_ios_new,
         ),
       ),
-      title: const Text('7 Days'),
+      title: const Text('3 Days'),
       centerTitle: true,
     );
   }

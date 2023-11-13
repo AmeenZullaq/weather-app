@@ -11,7 +11,7 @@ class ForecastView extends StatelessWidget {
     return const Scaffold(
       backgroundColor: AppColors.darkColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
+        preferredSize: Size.fromHeight(50),
         child: ForecastViewAppBar(),
       ),
       body: ForecastViewBody(),

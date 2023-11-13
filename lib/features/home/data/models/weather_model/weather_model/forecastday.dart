@@ -5,26 +5,24 @@ import 'day.dart';
 import 'hour.dart';
 
 class Forecastday extends Equatable {
-  final String? date;
+  final String date;
   final num? dateEpoch;
-  final Day? day;
+  final Day day;
   final Astro? astro;
   final List<Hour> hour;
 
   const Forecastday({
-    this.date,
+    required this.date,
     this.dateEpoch,
-    this.day,
+    required this.day,
     this.astro,
     required this.hour,
   });
 
   factory Forecastday.fromJson(Map<String, dynamic> json) => Forecastday(
-        date: json['date'] as String?,
+        date: json['date'] as String,
         dateEpoch: json['date_epoch'] as num?,
-        day: json['day'] == null
-            ? null
-            : Day.fromJson(json['day'] as Map<String, dynamic>),
+        day: Day.fromJson(json['day'] as Map<String, dynamic>),
         astro: json['astro'] == null
             ? null
             : Astro.fromJson(json['astro'] as Map<String, dynamic>),

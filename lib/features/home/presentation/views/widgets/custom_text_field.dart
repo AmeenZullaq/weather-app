@@ -51,10 +51,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-                BlocProvider.of<WeatherCubit>(context).fetchCurrentWeather(
+                BlocProvider.of<WeatherCubit>(context).fetchWeatherInfo(
                   cityName: cityName,
+                  daysNumber: 0,
                 );
-                GoRouter.of(context).push(AppRouter.homeView);
+                GoRouter.of(context).push(
+                  AppRouter.homeView,
+                  extra: cityName,
+                );
               }
             },
           ),

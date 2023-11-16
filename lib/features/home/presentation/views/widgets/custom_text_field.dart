@@ -26,7 +26,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           cityName = newValue!;
         },
         validator: (value) {
-          if (value == null || value.isEmpty || value.length == 4) {
+          if (value == null || value.isEmpty) {
             return 'field is required';
           }
           return null;

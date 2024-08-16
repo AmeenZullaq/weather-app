@@ -5,8 +5,7 @@ import '../../../../../core/widgets/custom_button.dart';
 import '../../manager/current_weather_cubit/weather_cubit.dart';
 
 class HomeAppBar extends StatelessWidget {
-  const HomeAppBar({super.key, required this.cityName});
-  final String cityName;
+  const HomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,6 @@ class HomeAppBar extends StatelessWidget {
           icon: Icons.refresh,
           onTap: () {
             BlocProvider.of<WeatherCubit>(context).fetchWeatherInfo(
-              cityName: cityName,
               daysNumber: 0,
             );
           },

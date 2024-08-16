@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utilis/styles.dart';
 
 class RowWeatherInfoItem extends StatelessWidget {
@@ -18,20 +19,20 @@ class RowWeatherInfoItem extends StatelessWidget {
     return Column(
       children: [
         Image(
-          height: 40,
+          height: 40.h,
           image: AssetImage(
             image,
           ),
         ),
-        const SizedBox(
-          height: 5,
+        SizedBox(
+          height: 5.h,
         ),
         Text(
           text1,
           style: Styles.textStyle17,
         ),
-        const SizedBox(
-          height: 5,
+        SizedBox(
+          height: 5.h,
         ),
         Text(
           text2,

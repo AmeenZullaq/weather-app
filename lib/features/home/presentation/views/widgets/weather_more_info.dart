@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waether_app/core/widgets/custom_error_widget.dart';
 import 'package:waether_app/core/widgets/custom_loading_indecator.dart';
 import 'package:waether_app/features/home/data/models/weather_model/weather_model/weather_model.dart';
@@ -17,11 +18,11 @@ class WeatherMoreInfo extends StatelessWidget {
         if (state is WeatherSuccess) {
           WeatherModel weather = state.weatherModel;
           return Container(
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            margin: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(vertical: 16.h),
+            margin: EdgeInsets.symmetric(horizontal: 20.w),
             decoration: BoxDecoration(
               color: AppColors.darkColor,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(16.r),
             ),
             child: RowWeatherInfo(weather: weather),
           );

@@ -1,36 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Styles {
-  static const textStyle14 = TextStyle(
-    fontSize: 14,
+  static TextStyle textStyle14 = TextStyle(
+    fontSize: 14.sp,
     color: Colors.grey,
   );
 
-  static const textStyle16 = TextStyle(
-    fontSize: 16,
+  static TextStyle textStyle16 = TextStyle(
+    fontSize: 16.sp,
   );
 
-  static const textStyle17 = TextStyle(
-    fontSize: 17,
+  static TextStyle textStyle17 = TextStyle(
+    fontSize: 17.sp,
     fontWeight: FontWeight.bold,
   );
 
-  static const textStyle18 = TextStyle(
-    fontSize: 18,
+  static TextStyle textStyle18 = TextStyle(
+    fontSize: 18.sp,
   );
 
-  static const textStyle30 = TextStyle(
-    fontSize: 30,
+  static TextStyle textStyle20 = TextStyle(
+    fontSize: 20.sp,
+  );
+
+  static TextStyle textStyle22 = TextStyle(
+    fontSize: 22.sp,
+  );
+
+  static TextStyle textStyle30 = TextStyle(
+    fontSize: 30.sp,
     fontWeight: FontWeight.bold,
   );
 
-  static const textStyle50 = TextStyle(
-    fontSize: 50,
+  static TextStyle textStyle50 = TextStyle(
+    fontSize: 50.sp,
     fontWeight: FontWeight.bold,
   );
 
-  static const textStyle150 = TextStyle(
-    fontSize: 150,
+  static TextStyle textStyle150 = TextStyle(
+    fontSize: 150.sp,
     fontWeight: FontWeight.bold,
   );
 }

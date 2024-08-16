@@ -1,67 +1,63 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:waether_app/core/utilis/app_router.dart';
+import 'package:waether_app/core/utilis/styles.dart';
 import 'package:waether_app/features/home/presentation/manager/current_weather_cubit/weather_cubit.dart';
 import '../../../../../core/utilis/app_colors.dart';
 import '../../../../../core/utilis/functions/out_line_input_border.dart';
 
-class CustomTextField extends StatefulWidget {
-  const CustomTextField({super.key});
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({
+    super.key,
+    this.focusNode,
+    required this.controller,
+  });
 
-  @override
-  State<CustomTextField> createState() => _CustomTextFieldState();
-}
-
-class _CustomTextFieldState extends State<CustomTextField> {
-  late String cityName;
-  GlobalKey<FormState> formKey = GlobalKey();
+  final FocusNode? focusNode;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      child: TextFormField(
-        onSaved: (newValue) {
-          cityName = newValue!;
-        },
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'field is required';
-          }
-          return null;
-        },
-        cursorColor: Colors.white,
-        decoration: InputDecoration(
-          fillColor: AppColors.lightColor,
-          filled: true,
-          hintText: 'Search a City',
-          hintStyle: const TextStyle(
-            color: Colors.white,
+    return TextFormField(
+      controller: controller,
+      focusNode: focusNode,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'field is required';
+        }
+        return null;
+      },
+      cursorColor: AppColors.lightColor,
+      style: const TextStyle(color: AppColors.darkColor),
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(
+          vertical: 16.h,
+          horizontal: 16.w,
+        ),
+        fillColor: Colors.white,
+        filled: true,
+        hintText: 'Search a City',
+        hintStyle: Styles.textStyle14.copyWith(
+          color: AppColors.darkColor,
+        ),
+        enabledBorder: outLineInputBorder(),
+        focusedBorder: outLineInputBorder(),
+        errorBorder: outLineInputBorder(),
+        focusedErrorBorder: outLineInputBorder(),
+        suffixIcon: IconButton(
+          icon: Icon(
+            Icons.search,
+            color: AppColors.darkColor,
+            size: 24.sp,
           ),
-          enabledBorder: outLineInputBorder(),
-          focusedBorder: outLineInputBorder(),
-          errorBorder: outLineInputBorder(),
-          focusedErrorBorder: outLineInputBorder(),
-          suffixIcon: IconButton(
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
-                BlocProvider.of<WeatherCubit>(context).fetchWeatherInfo(
-                  cityName: cityName,
-                  daysNumber: 0,
-                );
-                GoRouter.of(context).push(
-                  AppRouter.homeView,
-                  extra: cityName,
-                );
-              }
-            },
-          ),
+          onPressed: () {
+            context.read<WeatherCubit>().fetchWeatherInfo(daysNumber: 0);
+            GoRouter.of(context).push(
+              AppRouter.homeView,
+            );
+          },
         ),
       ),
     );

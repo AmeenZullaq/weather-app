@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waether_app/core/widgets/custom_error_widget.dart';
 import 'package:waether_app/core/widgets/custom_loading_indecator.dart';
 import 'package:waether_app/features/home/data/models/weather_model/weather_model/weather_model.dart';
@@ -23,16 +24,18 @@ class TodayWeather extends StatelessWidget {
                 weatherModel.location.name,
                 style: Styles.textStyle30,
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: 10.h,
               ),
               Text(
                 weatherModel.current.condition.text,
                 style: Styles.textStyle18,
               ),
               Stack(
+                alignment: Alignment.bottomCenter,
                 children: [
-                  Center(
+                  Align(
+                    alignment: Alignment.center,
                     child: Text(
                       '${weatherModel.current.tempC}°',
                       style: Styles.textStyle150,
@@ -40,19 +43,13 @@ class TodayWeather extends StatelessWidget {
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        top: 65,
-                        right: 65,
-                      ),
-                      child: Opacity(
-                        opacity: 0.8,
-                        child: CachedNetworkImage(
-                          height: 150,
-                          fit: BoxFit.fill,
-                          imageUrl:
-                              'https:${weatherModel.current.condition.icon}',
-                        ),
+                    child: Opacity(
+                      opacity: 0.8,
+                      child: CachedNetworkImage(
+                        height: 150.h,
+                        fit: BoxFit.fill,
+                        imageUrl:
+                            'https:${weatherModel.current.condition.icon}',
                       ),
                     ),
                   ),
@@ -75,3 +72,6 @@ class TodayWeather extends StatelessWidget {
     );
   }
 }
+
+
+

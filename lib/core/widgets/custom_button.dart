@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waether_app/core/utilis/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
@@ -14,15 +15,16 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 50,
-        width: 50,
+        height: 50.h,
+        width: 50.w,
         decoration: BoxDecoration(
           color: AppColors.darkColor,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
         ),
         child: Icon(
           icon,
           color: Colors.white,
+          size: 24.sp,
         ),
       ),
     );

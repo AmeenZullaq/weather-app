@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waether_app/features/home/presentation/views/widgets/forecast_weather_info_part1.dart';
 import 'package:waether_app/features/home/presentation/views/widgets/forecast_weather_info_part2.dart';
 import '../../../../../core/utilis/app_colors.dart';
@@ -16,10 +17,10 @@ class ForecastListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(15),
+      padding: EdgeInsets.all(15.r),
       decoration: BoxDecoration(
         color: AppColors.lightColor,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
       ),
       child: Column(
         children: [
@@ -27,8 +28,8 @@ class ForecastListViewItem extends StatelessWidget {
             weather: weather,
             index: index,
           ),
-          const SizedBox(
-            height: 30,
+          SizedBox(
+            height: 30.h,
           ),
           ForecastWeatherInfoPart2(
             weather: weather,

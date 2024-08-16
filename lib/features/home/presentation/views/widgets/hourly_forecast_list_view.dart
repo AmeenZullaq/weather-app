@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waether_app/core/widgets/custom_error_widget.dart';
 import 'package:waether_app/core/widgets/custom_loading_indecator.dart';
 import 'package:waether_app/features/home/data/models/weather_model/weather_model/weather_model.dart';
@@ -16,12 +17,12 @@ class HourlyForecastListView extends StatelessWidget {
         if (state is WeatherSuccess) {
           WeatherModel weather = state.weatherModel;
           return SizedBox(
-            height: 135,
+            height: 135.h,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               itemCount: weather.forecast.forecastday[0].hour.length,
-              separatorBuilder: (context, index) => const SizedBox(width: 10),
+              separatorBuilder: (context, index) => SizedBox(width: 10.w),
               itemBuilder: (context, index) {
                 return HourlyForecastListViewItem(
                   hourWeather: weather.forecast.forecastday[0].hour[index],

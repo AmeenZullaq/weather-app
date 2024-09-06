@@ -16,7 +16,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(seconds: 2),
+      const Duration(seconds: 3),
       () {
         GoRouter.of(context).pushReplacement(
           AppRouter.searchView,
@@ -27,17 +27,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image(
-          width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height,
-          fit: BoxFit.cover,
-          image: const AssetImage(
-            AssetsData.splash11,
-          ),
-        ),
-      ],
+    return Image(
+      width: MediaQuery.sizeOf(context).width,
+      height: MediaQuery.sizeOf(context).height,
+      fit: BoxFit.cover,
+      image: const AssetImage(
+        AssetsData.temperatureNow,
+      ),
     );
   }
 }

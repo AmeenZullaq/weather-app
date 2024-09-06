@@ -8,4 +8,7 @@ class AssetsData {
   static const search1 = 'assets/images/search_!.png';
   static const splash11 = 'assets/images/splash11.avif';
   static const splash22 = 'assets/images/splash22.jpg';
+  static const splash = 'assets/images/splash.svg';
+  static const temperatureNow = 'assets/images/Temperature_Now.png';
+
 }
